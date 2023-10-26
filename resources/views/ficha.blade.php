@@ -28,22 +28,14 @@
                             <div class="mb-4">
                                 <label for="raca" class="font-semibold">Raça:</label>
                                 <select id="raca" name="raca" class="w-full border border-gray-300 p-2 rounded">
-                                    <option value="humano">Humano</option>
-                                    <option value="elfo">Elfo</option>
-                                    <option value="anão">Anão</option>
-                                    <option value="halfling">Halfling</option>
-                                    <!-- Adicione mais opções de raça aqui -->
+                                    <option value="invalido" selected disabled>Escolha sua Raça</option>
                                 </select>
                             </div>
 
                             <div class="mb-4">
                                 <label for="classe" class="font-semibold">Classe:</label>
                                 <select id="classe" name="classe" class="w-full border border-gray-300 p-2 rounded">
-                                    <option value="guerreiro">Guerreiro</option>
-                                    <option value="mago">Mago</option>
-                                    <option value="clérigo">Clérigo</option>
-                                    <option value="ladino">Ladino</option>
-                                    <!-- Adicione mais opções de classe aqui -->
+                                    <option value="invalido" selected disabled>Escolha sua Classe</option>
                                 </select>
                             </div>
                         </div>
@@ -51,7 +43,7 @@
                         <div class="flex justify-between gap-2">
                             <div class="mb-4">
                                 <label for="antecedente" class="font-semibold">Antecedente:</label>
-                                <select id="antecedente" name="antecedente" class="w-full border border-gray-300 p-2 rounded">
+                                <select id="antecedente" name="antecedente" class="w-full border border-gray-300 p-2 rounded" disabled>
                                     <option value="nobre">Nobre</option>
                                     <option value="forasteiro">Forasteiro</option>
                                     <option value="artesão">Artesão</option>
@@ -62,7 +54,7 @@
 
                             <div class="mb-4">
                                 <label for="nivel" class="font-semibold">Nível:</label>
-                                <select id="nivel" name="nivel" class="w-full border border-gray-300 p-2 rounded">
+                                <select id="nivel" name="nivel" class="w-full border border-gray-300 p-2 rounded" disabled>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -88,23 +80,29 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!--AJAX-->
+
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            function request(index) {
+            function request(url, callback) {
                 $.ajax({
-                    url: "https://www.dnd5eapi.co/api/" + index,
-                    method: 'GET',
-                    dataType: 'json',
-
-                    success: function(data) {
-                        return data;
-                    }
+                    url: "https://servicodados.ibge.gov.br/api/v1/localidades/" + url,
+                    method: "GET",
+                    success: function (data) {
+                        callback(data);
+                    },
+                    error: function (error) {
+                        console.log("Erro: " + error);
+                    },
                 });
             }
 
-            console.log(request("classes"))
+            request("distritos", function(data){
+                data.forEach(cidades => {
+                    $('#raca').append('<option>' + cidades.nome + '</option>')
+                });
+            });
+
         });
     </script>
 </body>
