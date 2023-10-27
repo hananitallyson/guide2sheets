@@ -18,7 +18,7 @@
         <main class="mt-6 flex flex-col justify-center items-center h-3/4">
             <div class="py-12">
                 <div class="max-w-xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-gray-100 overflow-hidden shadow sm:rounded-lg">
+                    <div class="bg-slate-300 overflow-hidden shadow sm:rounded-lg">
                         <div class="text-xl p-6 text-gray-900 text-center">
                             Nossa plataforma fornece uma ferramenta ideal para facilitar a criação de fichas de personagens no sistema de D&D 5E!
                         </div>
@@ -30,7 +30,7 @@
             </a>
         </main>
 
-        <footer class="bg-gray-100 w-full shadow fixed bottom-0 flex">
+        <footer class="bg-slate-300 w-full shadow fixed bottom-0 flex">
             <div class="mx-auto max-w-screen-xl p-4">
                 <span class="text-sm text-gray-500 text-center">© {{ now()->year }} <a href="#" class="hover:underline">Guide2Sheets</a>. Todos os direitos reservados.
                 </span>
