@@ -44,11 +44,7 @@
                             <div class="mb-4">
                                 <label for="antecedente" class="font-semibold">Antecedente:</label>
                                 <select id="antecedente" name="antecedente" class="w-full border border-gray-300 p-2 rounded" disabled>
-                                    <option value="nobre">Nobre</option>
-                                    <option value="forasteiro">Forasteiro</option>
-                                    <option value="artesão">Artesão</option>
-                                    <option value="acólito">Acólito</option>
-                                    <!-- Adicione mais opções de antecedente aqui -->
+                                    <option value="invalido" selected disabled>Escolha seu Antecendente</option>
                                 </select>
                             </div>
 
@@ -82,27 +78,54 @@
 
 
     <script>
-        $(document).ready(function () {
+        // REQUISIÇÕES
+        $(document).ready(function() {
 
             function request(url, callback) {
                 $.ajax({
-                    url: "https://servicodados.ibge.gov.br/api/v1/localidades/" + url,
+                    url: "https://www.dnd5eapi.co/api/" + url,
                     method: "GET",
-                    success: function (data) {
+                    success: function(data) {
                         callback(data);
                     },
-                    error: function (error) {
+                    error: function(error) {
                         console.log("Erro: " + error);
                     },
                 });
             }
 
-            request("distritos", function(data){
-                data.forEach(cidades => {
-                    $('#raca').append('<option>' + cidades.nome + '</option>')
+            request("classes", function(data) {
+                data.results.forEach(classes => {
+                    $('#classe').append('<option value="' + classes.name + '">' + classes.name + '</option>');
                 });
             });
 
+            request("races", function(data) {
+                data.results.forEach(racas => {
+                    $('#raca').append('<option value="' + racas.name + '">' + racas.name + '</option>');
+                });
+            });
+
+            request("backgrounds", function(data) {
+                data.results.forEach(antecendente => {
+                    $('#antecedente').append('<option value="' + antecendente.name + '">' + antecendente.name + '</option>');
+                });
+            });
+
+        });
+    </script>
+
+    <script>
+        // CONFIGURAÇÕES
+        $("#classe, #raca").on("change", function() {
+            var classe = $('#classe').val();
+            var raca = $('#raca').val();
+
+            if (classe != null && raca != null) {
+                $("#antecedente, #nivel").removeAttr("disabled");
+            } else {
+                $("#antecedente, #nivel").attr("disabled", "disabled");
+            }
         });
     </script>
 </body>
