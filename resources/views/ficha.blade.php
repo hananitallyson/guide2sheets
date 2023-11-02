@@ -68,7 +68,7 @@
                             <div class="flex flex-col justify-between">
                                 <div class="mb-4 flex flex-col">
                                     <label for="nome-do-personagem" class="font-semibold">Nome do Personagem:</label>
-                                    <input id="nome-do-personagem" type="text" name="nome_do_personagem" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="Digite o nome do seu personagem">
+                                    <input id="nome-do-personagem" type="text" name="nome_do_personagem" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="Digite o nome do seu personagem" required>
                                 </div>
 
                                 <div class="mb-4 flex gap-2">
