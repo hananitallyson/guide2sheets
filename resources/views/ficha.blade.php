@@ -63,18 +63,18 @@
             <div class="pb-12">
                 <div class="mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow sm:rounded-lg">
-                        <form method="POST" class="p-6 flex flex-col">
+                        <form method="POST" class="p-6 flex flex-col" action="{{route("uploud")}}">
                             @csrf
                             <div class="flex flex-col justify-between">
                                 <div class="mb-4 flex flex-col">
                                     <label for="nome-do-personagem" class="font-semibold">Nome do Personagem:</label>
-                                    <input id="nome-do-personagem" type="text" name="nome-do-personagem" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="Digite o nome do seu personagem">
+                                    <input id="nome-do-personagem" type="text" name="nome_do_personagem" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="Digite o nome do seu personagem">
                                 </div>
 
                                 <div class="mb-4 flex gap-2">
                                     <div class="w-16">
                                         <label for="forca" class="font-semibold">For:</label>
-                                        <input id="forca" type="number" min="0" max="20" name="forca" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="forca" type="number" min="0" max="20" name="Forca" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
                                     </div>
 
                                     <div class="w-16">
@@ -84,12 +84,12 @@
 
                                     <div class="w-16">
                                         <label for="Constituição" class="font-semibold">Cons:</label>
-                                        <input id="Constituição" type="number" min="0" max="20" name="Constituição" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Constituição" type="number" min="0" max="20" name="Constituicao" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
                                     </div>
 
                                     <div class="w-16">
                                         <label for="Inteligência" class="font-semibold">Int:</label>
-                                        <input id="Inteligência" type="number" min="0" max="20" name="Inteligência" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Inteligência" type="number" min="0" max="20" name="Inteligencia" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
                                     </div>
 
                                     <div class="w-16">

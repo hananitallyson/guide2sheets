@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::get('/', function () {
 Route::get('/ficha', function () {
     return view('ficha');
 });
+
+Route::post('/uploudFicha', [PdfController::class, "uploudPDF"])->name("uploud");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
