@@ -801,7 +801,7 @@
                                         placeholder="10" />
                                 </div>
                                 <div class="modifier">
-                                    <input name="Strengthmod" placeholder="+0" />
+                                    <input name="Strengthmod" placeholder="+0" value="{{$data['ForcaMod']}}"a />
                                 </div>
                             </li>
                             <li>
@@ -810,7 +810,7 @@
                                         placeholder="10" />
                                 </div>
                                 <div class="modifier">
-                                    <input name="Dexteritymod" placeholder="+0" />
+                                    <input name="Dexteritymod" placeholder="+0" value="{{$data['DestrezaMod']}}"/>
                                 </div>
                             </li>
                             <li>
@@ -819,7 +819,7 @@
                                         placeholder="10" />
                                 </div>
                                 <div class="modifier">
-                                    <input name="Constitutionmod" placeholder="+0" />
+                                    <input name="Constitutionmod" placeholder="+0" value="{{$data['ConstituicaoMod']}}"/>
                                 </div>
                             </li>
                             <li>
@@ -827,16 +827,16 @@
                                     <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" value="{{$data['Sabedoria']}}" />
                                 </div>
                                 <div class="modifier">
-                                    <input name="Wisdommod" placeholder="+0" />
+                                    <input name="Wisdommod" placeholder="+0" value="{{$data['SabedoriaMod']}}"/>
                                 </div>
                             </li>
                             <li>
                                 <div class="score">
-                                    <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore"value="{{$data['Inteligencia']}}"
+                                    <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" value="{{$data['Inteligencia']}}"
                                         placeholder="10" />
                                 </div>
                                 <div class="modifier">
-                                    <input name="Intelligencemod" placeholder="+0" />
+                                    <input name="Intelligencemod" placeholder="+0" value="{{$data['InteligenciaMod']}}"/>
                                 </div>
                             </li>
                             <li>
@@ -845,7 +845,7 @@
                                         placeholder="10" />
                                 </div>
                                 <div class="modifier">
-                                    <input name="Charismamod" placeholder="+0" />
+                                    <input name="Charismamod" placeholder="+0" value="{{$data['CarismaMod']}}"/>
                                 </div>
                             </li>
                         </ul>
@@ -1060,24 +1060,6 @@
                         <div>
                             <div class="label">
                                 <label>Death Saves</label>
-                            </div>
-                            <div class="marks">
-                                <div class="deathsuccesses">
-                                    <label>Successes</label>
-                                    <div class="bubbles">
-                                        <input name="deathsuccess1" type="checkbox" />
-                                        <input name="deathsuccess2" type="checkbox" />
-                                        <input name="deathsuccess3" type="checkbox" />
-                                    </div>
-                                </div>
-                                <div class="deathfails">
-                                    <label>Failures</label>
-                                    <div class="bubbles">
-                                        <input name="deathfail1" type="checkbox" />
-                                        <input name="deathfail2" type="checkbox" />
-                                        <input name="deathfail3" type="checkbox" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

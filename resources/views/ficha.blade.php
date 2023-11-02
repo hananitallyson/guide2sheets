@@ -74,32 +74,32 @@
                                 <div class="mb-4 flex gap-2">
                                     <div class="w-16">
                                         <label for="forca" class="font-semibold">For:</label>
-                                        <input id="forca" type="number" min="0" max="20" name="Forca" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="forca" type="number" min="8" max="18" name="Forca" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
                                     </div>
 
                                     <div class="w-16">
                                         <label for="Destreza" class="font-semibold">Des:</label>
-                                        <input id="Destreza" type="number" min="0" max="20" name="Destreza" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Destreza" type="number" min="0" max="20" name="Destreza" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
                                     </div>
 
                                     <div class="w-16">
                                         <label for="Constituição" class="font-semibold">Cons:</label>
-                                        <input id="Constituição" type="number" min="0" max="20" name="Constituicao" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Constituição" type="number" min="0" max="20" name="Constituicao" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
                                     </div>
 
                                     <div class="w-16">
                                         <label for="Inteligência" class="font-semibold">Int:</label>
-                                        <input id="Inteligência" type="number" min="0" max="20" name="Inteligencia" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Inteligência" type="number" min="0" max="20" name="Inteligencia" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
                                     </div>
 
                                     <div class="w-16">
                                         <label for="Sabedoria" class="font-semibold">Sab:</label>
-                                        <input id="Sabedoria" type="number" min="0" max="20" name="Sabedoria" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Sabedoria" type="number" min="0" max="20" name="Sabedoria" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
                                     </div class="w-52">
 
                                     <div class="w-16">
                                         <label for="Carisma" class="font-semibold">Car:</label>
-                                        <input id="Carisma" type="number" min="0" max="20" name="Carisma" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10">
+                                        <input id="Carisma" type="number" min="0" max="20" name="Carisma" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
                                     </div>
                                 </div>
                             </div>
