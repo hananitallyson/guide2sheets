@@ -61,21 +61,21 @@
                 </g>
               </svg>
             <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-                <form method="POST" action="">
+                <form method="POST" action="{{route("feedback.store")}}">
                     @csrf
                     <div class="mx-auto px-6 py-4 bg-white overflow-hidden shadow sm:rounded-lg">
                         <h1 class="text-center text-2xl font-bold mb-4">Feedbacks</h1>
                         <div class="mt-2">
                             <label>Descreva qual o principal objetivo, no seu ponto de vista:</label>
-                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"/>
+                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text" name="objetivo_principal" required/>
                         </div>
                         <div class="mt-2">
                             <label>Você, como usuário, conseguiu usar as funcionalidades?</label>
-                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"/>
+                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"  name="funcionalidades" required/>
                         </div>
                         <div class="mt-2 mb-4">
                             <label>Descreva sua experiência com o site:</label>
-                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"/>
+                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text" name="experiencia" required/>
                         </div>
                     </div>
                     <div class="flex justify-between">
