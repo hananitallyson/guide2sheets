@@ -12,15 +12,17 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        return to_route('feedback.create');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view("feedback");
+        $message = $request->session()->get('message');
+
+        return view('feedback')->with('message', $message);
     }
 
     /**
@@ -32,8 +34,9 @@ class FeedbackController extends Controller
 
         $feedback->fill($request->all());
         $feedback->save();
-    
-        return redirect()->route("feedback.create");
+
+        return redirect()
+            ->route("feedback.create")->with('message', "Feedback enviado com sucesso!");
     }
 
     /**

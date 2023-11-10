@@ -26,10 +26,6 @@ Route::get('/ficha', function () {
     return view('ficha');
 });
 
-Route::get('/feedback', function () {
-    return view('feedback');
-});
-
 Route::post('/uploudFicha', [PdfController::class, "uploudPDF"])->name("uploud");
 
 Route::middleware('auth')->group(function () {
