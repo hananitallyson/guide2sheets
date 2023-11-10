@@ -23,11 +23,11 @@ Route::get('/ficha', function () {
     return view('ficha');
 });
 
-Route::post('/uploudFicha', [PdfController::class, "uploudPDF"])->name("uploud");
+Route::get('/feedback', function () {
+    return view('feedback');
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/uploudFicha', [PdfController::class, "uploudPDF"])->name("uploud");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,4 +35,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

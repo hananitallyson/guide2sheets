@@ -67,9 +67,14 @@
                         </div>
                     </div>
                 </div>
-                <a href="/ficha" class="bg-red-600 py-2 px-6 text-xl rounded-full text-white font-semibold hover:bg-red-700 transition-all duration-200 transform hover:scale-105">
-                    Criar ficha!
-                </a>
+                <div class="flex gap-2">
+                    <a href="/ficha" class="bg-red-600 py-2 px-6 text-xl rounded-full text-white font-semibold hover:bg-red-700 transition-all duration-200 transform hover:scale-105">
+                        Criar ficha!
+                    </a>
+                    <a href="/feedback" class="bg-slate-600 py-2 px-6 text-xl rounded-full text-white font-semibold hover:bg-slate-700 transition-all duration-200 transform hover:scale-105">
+                        Deixe seu feedback!
+                    </a>
+                </div>
             </main>
 
             <footer class="bg-white w-full shadow fixed bottom-0 flex">

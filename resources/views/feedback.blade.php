@@ -60,148 +60,37 @@
                   <path class="cls-3" d="m1788.12,712.64c-14.94,0-33.02-4.19-39.83-4.19-3.67,0-6.55.79-9.17,2.1l-9.17-51.1,7.08-1.57c1.57,4.46,3.41,9.43,7.08,12.84,6.29,6.03,18.34,9.7,38,9.7,18.08,0,24.11-5.5,24.11-10.48,0-5.24-2.62-8.91-33.54-21.49-25.68-10.48-39.57-23.32-39.57-42.45,0-27.25,22.54-45.86,63.42-45.86,10.48,0,24.37,3.14,30.14,3.14,3.67,0,6.29-.52,8.91-1.83l5.24,45.86-6.55,1.31c-1.31-4.46-3.41-7.86-7.6-10.48-4.72-3.14-13.37-5.77-28.3-5.77-16.77,0-21.49,3.93-21.49,8.39,0,4.98,3.93,8.65,30.4,19.39,22.54,9.17,40.88,20.7,40.88,45.6,0,28.04-21.49,46.91-60.01,46.91Z"/>
                 </g>
               </svg>
-            <div class="pb-12">
-                <div class="mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow sm:rounded-lg">
-                        <form method="POST" class="p-6 flex flex-col" action="/uploudFicha">
-                            @csrf
-                            <div class="flex flex-col justify-between">
-                                <div class="mb-4 flex flex-col">
-                                    <label for="nome-do-personagem" class="font-semibold">Nome do Personagem:</label>
-                                    <input id="nome-do-personagem" type="text" name="nome_do_personagem" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="Digite o nome do seu personagem" required>
-                                </div>
-
-                                <div class="mb-4 flex gap-2">
-                                    <div class="w-16">
-                                        <label for="forca" class="font-semibold">For:</label>
-                                        <input id="forca" type="number" min="8" max="18" name="Forca" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
-                                    </div>
-
-                                    <div class="w-16">
-                                        <label for="Destreza" class="font-semibold">Des:</label>
-                                        <input id="Destreza" type="number" min="0" max="20" name="Destreza" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
-                                    </div>
-
-                                    <div class="w-16">
-                                        <label for="Constituição" class="font-semibold">Cons:</label>
-                                        <input id="Constituição" type="number" min="0" max="20" name="Constituicao" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
-                                    </div>
-
-                                    <div class="w-16">
-                                        <label for="Inteligência" class="font-semibold">Int:</label>
-                                        <input id="Inteligência" type="number" min="0" max="20" name="Inteligencia" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
-                                    </div>
-
-                                    <div class="w-16">
-                                        <label for="Sabedoria" class="font-semibold">Sab:</label>
-                                        <input id="Sabedoria" type="number" min="0" max="20" name="Sabedoria" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
-                                    </div class="w-52">
-
-                                    <div class="w-16">
-                                        <label for="Carisma" class="font-semibold">Car:</label>
-                                        <input id="Carisma" type="number" min="0" max="20" name="Carisma" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" placeholder="10" pattern="^(8|9|1[0-8])$">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between">
-                                <div class="mb-4">
-                                    <label for="raca" class="font-semibold">Raça:</label>
-                                    <select id="raca" name="raca" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600">
-                                        <option value="invalido" selected disabled>Escolha sua Raça</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="classe" class="font-semibold">Classe:</label>
-                                    <select id="classe" name="classe" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600">
-                                        <option value="invalido" selected disabled>Escolha sua Classe</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between">
-                                <div class="mb-4 w-full">
-                                    <label for="antecedente" class="font-semibold">Antecedente:</label>
-                                    <select id="antecedente" name="antecedente" class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" disabled>
-                                        <option value="invalido" selected disabled>Escolha seu Antecendente</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between">
-                                <a href="/" class="bg-slate-600 hover:bg-slate-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
-
-                                <input class="bg-red-600 hover:bg-red-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105" type="submit" value="Gerar Ficha!">
-                            </div>
-                        </form>
+            <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+                <form method="POST" action="">
+                    @csrf
+                    <div class="mx-auto px-6 py-4 bg-white overflow-hidden shadow sm:rounded-lg">
+                        <h1 class="text-center text-2xl font-bold mb-4">Feedbacks</h1>
+                        <div class="mt-2">
+                            <label>Descreva qual o principal objetivo, no seu ponto de vista:</label>
+                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"/>
+                        </div>
+                        <div class="mt-2">
+                            <label>Você, como usuário, conseguiu usar as funcionalidades?</label>
+                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"/>
+                        </div>
+                        <div class="mt-2 mb-4">
+                            <label>Descreva sua experiência com o site:</label>
+                            <input class="block w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" type="text"/>
+                        </div>
                     </div>
-                </div>
+                    <div class="flex justify-between">
+                        <a href="/" class="bg-slate-600 hover:bg-slate-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
+
+                        <input class="bg-red-600 hover:bg-red-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105" type="submit" value="Enviar">
+                    </div>
+                </form>
             </div>
         </main>
-
-        <footer class="bg-white w-full shadow fixed bottom-0 flex">
-            <div class="mx-auto max-w-screen-xl p-4">
-                <span class="text-sm text-gray-500 text-center">© {{ now()->year }} <a href="#" class="hover:underline">Guide2Sheets</a>. Todos os direitos reservados.
-                </span>
-            </div>
-        </footer>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-    <script>
-        // REQUISIÇÕES
-        $(document).ready(function() {
-
-            function request(url, callback) {
-                $.ajax({
-                    url: "https://www.dnd5eapi.co/api/" + url,
-                    method: "GET",
-                    success: function(data) {
-                        callback(data);
-                    },
-                    error: function(error) {
-                        console.log("Erro: " + error);
-                    },
-                });
-            }
-
-            request("classes", function(data) {
-                data.results.forEach(classes => {
-                    $('#classe').append('<option value="' + classes.name + '">' + classes.name + '</option>');
-                });
-            });
-
-            request("races", function(data) {
-                data.results.forEach(racas => {
-                    $('#raca').append('<option value="' + racas.name + '">' + racas.name + '</option>');
-                });
-            });
-
-            request("backgrounds", function(data) {
-                data.results.forEach(antecendente => {
-                    $('#antecedente').append('<option value="' + antecendente.name + '">' + antecendente.name + '</option>');
-                });
-            });
-
-        });
-    </script>
-
-    <script>
-        // CONFIGURAÇÕES
-        $("#classe, #raca").on("change", function() {
-            var classe = $('#classe').val();
-            var raca = $('#raca').val();
-
-            if (classe != null && raca != null) {
-                $("#antecedente, #nivel").removeAttr("disabled");
-            } else {
-                $("#antecedente, #nivel").attr("disabled", "disabled");
-            }
-        });
-    </script>
+    <footer class="bg-white w-full shadow fixed bottom-0 flex">
+        <div class="mx-auto max-w-screen-xl p-4">
+            <span class="text-sm text-gray-500 text-center">© {{ now()->year }} <a href="#" class="hover:underline">Guide2Sheets</a>. Todos os direitos reservados.
+            </span>
+        </div>
+    </footer>
 </body>
-
-</html>
