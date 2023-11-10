@@ -12,7 +12,11 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        return to_route('feedback.create');
+
+
+        return view('feedback.index', [
+            'feedbacks' => Feedback::all(),
+        ]);
     }
 
     /**
@@ -22,7 +26,8 @@ class FeedbackController extends Controller
     {
         $message = $request->session()->get('message');
 
-        return view('feedback')->with('message', $message);
+        return view('feedback.create')
+            ->with('message', $message);
     }
 
     /**
@@ -36,7 +41,8 @@ class FeedbackController extends Controller
         $feedback->save();
 
         return redirect()
-            ->route("feedback.create")->with('message', "Feedback enviado com sucesso!");
+            ->route("feedback.create")
+            ->with('message', "Feedback enviado com sucesso!");
     }
 
     /**
