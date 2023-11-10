@@ -79,33 +79,37 @@
                             d="m1788.12,712.64c-14.94,0-33.02-4.19-39.83-4.19-3.67,0-6.55.79-9.17,2.1l-9.17-51.1,7.08-1.57c1.57,4.46,3.41,9.43,7.08,12.84,6.29,6.03,18.34,9.7,38,9.7,18.08,0,24.11-5.5,24.11-10.48,0-5.24-2.62-8.91-33.54-21.49-25.68-10.48-39.57-23.32-39.57-42.45,0-27.25,22.54-45.86,63.42-45.86,10.48,0,24.37,3.14,30.14,3.14,3.67,0,6.29-.52,8.91-1.83l5.24,45.86-6.55,1.31c-1.31-4.46-3.41-7.86-7.6-10.48-4.72-3.14-13.37-5.77-28.3-5.77-16.77,0-21.49,3.93-21.49,8.39,0,4.98,3.93,8.65,30.4,19.39,22.54,9.17,40.88,20.7,40.88,45.6,0,28.04-21.49,46.91-60.01,46.91Z" />
                     </g>
                 </svg>
-                <div class="max-w-4xl mx-auto p-4 bg-white shadow-sm rounded-lg divide-y">
-                    @foreach ($feedbacks as $feedback)
-                        <div class="p-6 flex space-x-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 -scale-x-100"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                            </svg>
-                            <div>
-                                <div class="my-2">
-                                    <span class="font-semibold">Descreva qual o principal objetivo, no seu ponto de
-                                        vista:</span>
-                                    <p class="text-lg text-gray-700">{{ $feedback->objetivo_principal }}</p>
-                                </div>
-                                <div class="my-2">
-                                    <span class="font-semibold">Você, como usuário, conseguiu usar as
-                                        funcionalidades?</span>
-                                    <p class="text-lg text-gray-700">{{ $feedback->funcionalidades }}</p>
-                                </div>
-                                <div class="my-2">
-                                    <span class="font-semibold">Descreva sua experiência com o site:</span>
-                                    <p class="text-lg text-gray-700">{{ $feedback->experiencia }}</p>
+                @if (count($feedbacks) != 0)
+                    <div class="max-w-4xl mx-auto p-4 bg-white shadow-sm rounded-lg divide-y">
+                        @foreach ($feedbacks as $feedback)
+                            <div class="p-6 flex space-x-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 -scale-x-100"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                <div>
+                                    <div class="my-2">
+                                        <span class="font-semibold">Descreva qual o principal objetivo, no seu ponto de
+                                            vista:</span>
+                                        <p class="text-lg text-gray-700">{{ $feedback->objetivo_principal }}</p>
+                                    </div>
+                                    <div class="my-2">
+                                        <span class="font-semibold">Você, como usuário, conseguiu usar as
+                                            funcionalidades?</span>
+                                        <p class="text-lg text-gray-700">{{ $feedback->funcionalidades }}</p>
+                                    </div>
+                                    <div class="my-2">
+                                        <span class="font-semibold">Descreva sua experiência com o site:</span>
+                                        <p class="text-lg text-gray-700">{{ $feedback->experiencia }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
+                @endif
+                <a href="/"
+                    class="bg-slate-600 mb-8 hover:bg-slate-700 transition-all duration-200 mt-8 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
             </main>
             <footer class="bg-white w-full shadow fixed bottom-0 flex">
                 <div class="mx-auto max-w-screen-xl p-4">
