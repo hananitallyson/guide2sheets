@@ -204,6 +204,8 @@
                         </div>
                     @endforeach
                 </div>
+                <a href="/"
+                    class="bg-slate-600 mb-8 hover:bg-slate-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
             </main>
         </div>
         <footer class="bg-white w-full shadow flex">
