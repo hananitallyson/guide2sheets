@@ -97,7 +97,7 @@
                                         <input id="forca" type="number" min="8" max="18"
                                             name="Forca"
                                             class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                            placeholder="10" pattern="^(8|9|1[0-8])$">
+                                            placeholder="10" pattern="^(8|9|1[0-8])$" required>
                                     </div>
 
                                     <div class="w-16">
@@ -105,7 +105,7 @@
                                         <input id="Destreza" type="number" min="0" max="20"
                                             name="Destreza"
                                             class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                            placeholder="10" pattern="^(8|9|1[0-8])$">
+                                            placeholder="10" pattern="^(8|9|1[0-8])$" required>
                                     </div>
 
                                     <div class="w-16">
@@ -113,7 +113,7 @@
                                         <input id="Constituição" type="number" min="0" max="20"
                                             name="Constituicao"
                                             class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                            placeholder="10" pattern="^(8|9|1[0-8])$">
+                                            placeholder="10" pattern="^(8|9|1[0-8])$" required>
                                     </div>
 
                                     <div class="w-16">
@@ -121,7 +121,7 @@
                                         <input id="Inteligência" type="number" min="0" max="20"
                                             name="Inteligencia"
                                             class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                            placeholder="10" pattern="^(8|9|1[0-8])$">
+                                            placeholder="10" pattern="^(8|9|1[0-8])$" required>
                                     </div>
 
                                     <div class="w-16">
@@ -129,7 +129,7 @@
                                         <input id="Sabedoria" type="number" min="0" max="20"
                                             name="Sabedoria"
                                             class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                            placeholder="10" pattern="^(8|9|1[0-8])$">
+                                            placeholder="10" pattern="^(8|9|1[0-8])$" required>
                                     </div class="w-52">
 
                                     <div class="w-16">
@@ -137,7 +137,7 @@
                                         <input id="Carisma" type="number" min="0" max="20"
                                             name="Carisma"
                                             class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                            placeholder="10" pattern="^(8|9|1[0-8])$">
+                                            placeholder="10" pattern="^(8|9|1[0-8])$" required>
                                     </div>
                                 </div>
                             </div>
@@ -146,16 +146,18 @@
                                 <div class="mb-4">
                                     <label for="raca" class="font-semibold">Raça:</label>
                                     <select id="raca" name="raca"
-                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600">
+                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" required>
                                         <option value="invalido" selected disabled>Escolha sua Raça</option>
+                                        <option value="a">Escolha seu Antecendente</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="classe" class="font-semibold">Classe:</label>
                                     <select id="classe" name="classe"
-                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600">
+                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" required  >
                                         <option value="invalido" selected disabled>Escolha sua Classe</option>
+                                        <option value="a">Escolha seu Antecendente</option>
                                     </select>
                                 </div>
                             </div>
@@ -165,8 +167,9 @@
                                     <label for="antecedente" class="font-semibold">Antecedente:</label>
                                     <select id="antecedente" name="antecedente"
                                         class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                        disabled>
+                                         required>
                                         <option value="invalido" selected disabled>Escolha seu Antecendente</option>
+                                        <option value="a">Escolha seu Antecendente</option>
                                     </select>
                                 </div>
                             </div>
@@ -175,9 +178,7 @@
                                 <a href="/"
                                     class="bg-slate-600 hover:bg-slate-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
 
-                                <input
-                                    class="bg-red-600 hover:bg-red-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105"
-                                    type="submit" value="Gerar Ficha!">
+                                <button class="bg-gray-400 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold" id="enviar" disabled>Gerar Ficha</button>
                             </div>
                         </form>
                     </div>
@@ -202,7 +203,6 @@
     <script>
         // REQUISIÇÕES
         $(document).ready(function() {
-
             function request(url, callback) {
                 $.ajax({
                     url: "https://www.dnd5eapi.co/api/" + url,
@@ -239,20 +239,20 @@
 
         });
     </script>
+<script>
+    // CONFIGURAÇÕES
+    $("#classe, #raca, #antecedente").on("change", function () {
+        var classe = $("#classe").val();
+        var raca = $("#raca").val();
+        var antecedente = $("#antecedente").val();
 
-    <script>
-        // CONFIGURAÇÕES
-        $("#classe, #raca").on("change", function() {
-            var classe = $('#classe').val();
-            var raca = $('#raca').val();
-
-            if (classe != null && raca != null) {
-                $("#antecedente, #nivel").removeAttr("disabled");
-            } else {
-                $("#antecedente, #nivel").attr("disabled", "disabled");
-            }
-        });
-    </script>
+        if (classe !== null && raca !== null && antecedente !== null) {
+            $("#enviar").addClass("bg-red-600 hover:bg-red-700 transition-all duration-200 transform hover:scale-105 cursor-pointer");
+            $("#enviar").removeClass("bg-gray-400");
+            $("#enviar").removeAttr("disabled");
+        }
+    });
+</script>
 </body>
 
 </html>
