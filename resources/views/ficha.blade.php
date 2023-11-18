@@ -148,7 +148,6 @@
                                     <select id="raca" name="raca"
                                         class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" required>
                                         <option value="invalido" selected disabled>Escolha sua Raça</option>
-                                        <option value="a">Escolha seu Antecendente</option>
                                     </select>
                                 </div>
 
@@ -157,7 +156,6 @@
                                     <select id="classe" name="classe"
                                         class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" required  >
                                         <option value="invalido" selected disabled>Escolha sua Classe</option>
-                                        <option value="a">Escolha seu Antecendente</option>
                                     </select>
                                 </div>
                             </div>
@@ -169,7 +167,6 @@
                                         class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
                                          required>
                                         <option value="invalido" selected disabled>Escolha seu Antecendente</option>
-                                        <option value="a">Escolha seu Antecendente</option>
                                     </select>
                                 </div>
                             </div>
