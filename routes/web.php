@@ -24,7 +24,7 @@ Route::resource('/feedback', FeedbackController::class);
 
 Route::get('/ficha', function () {
     return view('ficha');
-});
+})->name("ficha");
 
 Route::post('/uploudFicha', [PdfController::class, "uploudPDF"])->name("uploud");
 
