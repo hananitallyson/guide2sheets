@@ -1,0 +1,16 @@
+{
+  "public/dnd-wallpaper.jpg": {
+    "file": "assets/dnd-wallpaper-42aaeb0e.jpg",
+    "src": "public/dnd-wallpaper.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-03cecf58.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-87fccfb9.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
