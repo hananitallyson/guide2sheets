@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::resource('/feedback', FeedbackController::class);
 
 Route::get('/ficha', function () {
@@ -27,6 +23,10 @@ Route::get('/ficha', function () {
 })->name("ficha");
 
 Route::post('/uploudFicha', [PdfController::class, "uploudPDF"])->name("uploud");
+
+Route::get('ficha', [FeedbackController::class, "ficha"])->name("ficha");
+
+Route::get('/', [FeedbackController::class, "welcome"])->name("welcome");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

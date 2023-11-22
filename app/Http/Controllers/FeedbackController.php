@@ -28,6 +28,14 @@ class FeedbackController extends Controller
             ->with('message', $message);
     }
 
+    public function ficha(){
+        return view('ficha');
+    }
+
+    public function welcome(){
+        return view("welcome");
+    }
+
     /**
      * Store a newly created resource in storage.
      */

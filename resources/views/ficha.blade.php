@@ -172,7 +172,7 @@
                             </div>
 
                             <div class="flex justify-between">
-                                <a href="/"
+                                <a href="{{route("welcome")}}"
                                     class="bg-slate-600 hover:bg-slate-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
 
                                 <button class="bg-gray-400 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold" id="enviar" disabled>Gerar Ficha</button>
