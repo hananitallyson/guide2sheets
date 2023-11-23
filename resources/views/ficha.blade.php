@@ -146,16 +146,26 @@
                                 <div class="mb-4">
                                     <label for="raca" class="font-semibold">Raça:</label>
                                     <select id="raca" name="raca"
-                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" required>
+                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
+                                        required>
                                         <option value="invalido" selected disabled>Escolha sua Raça</option>
+                                        <option value="Anão">Anão</option>
+                                        <option value="Elfo">Elfo</option>
+                                        <option value="Humano">Humano</option>
+                                        <option value="Halfling">Halfing</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="classe" class="font-semibold">Classe:</label>
                                     <select id="classe" name="classe"
-                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600" required  >
+                                        class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
+                                        required>
                                         <option value="invalido" selected disabled>Escolha sua Classe</option>
+                                        <option value="barbaro">Bárbaro</option>
+                                        <option value="bardo">Bardo</option>
+                                        <option value="guerreiro">Guerreiro</option>
+                                        <option value="mago">Mago</option>
                                     </select>
                                 </div>
                             </div>
@@ -165,17 +175,26 @@
                                     <label for="antecedente" class="font-semibold">Antecedente:</label>
                                     <select id="antecedente" name="antecedente"
                                         class="w-full border border-gray-300 p-2 rounded focus:border-red-600 focus:ring-red-600"
-                                         required>
+                                        required>
                                         <option value="invalido" selected disabled>Escolha seu Antecendente</option>
+                                        <option value="acolito">Acólito</option>
+                                        <option value="artista">Artista</option>
+                                        <option value="atleta">Atleta</option>
+                                        <option value="criminoso">Criminoso</option>
+                                        <option value="charlatao">Charlatão</option>
+                                        <option value="herdeiro">Herdeiro</option>
+                                        <option value="vigia">Vigia</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="flex justify-between">
-                                <a href="{{route("welcome")}}"
+                                <a href="{{ route('welcome') }}"
                                     class="bg-slate-600 hover:bg-slate-700 transition-all duration-200 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold cursor-pointer transform hover:scale-105">Voltar</a>
 
-                                <button class="bg-gray-400 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold" id="enviar" disabled>Gerar Ficha</button>
+                                <button
+                                    class="bg-gray-400 mt-2 py-2 px-6 text-xl rounded-full text-white font-semibold"
+                                    id="enviar" disabled>Gerar Ficha</button>
                             </div>
                         </form>
                     </div>
@@ -236,20 +255,22 @@
 
         });
     </script>
-<script>
-    // CONFIGURAÇÕES
-    $("#classe, #raca, #antecedente").on("change", function () {
-        var classe = $("#classe").val();
-        var raca = $("#raca").val();
-        var antecedente = $("#antecedente").val();
+    <script>
+        // CONFIGURAÇÕES
+        $("#classe, #raca, #antecedente").on("change", function() {
+            var classe = $("#classe").val();
+            var raca = $("#raca").val();
+            var antecedente = $("#antecedente").val();
 
-        if (classe !== null && raca !== null && antecedente !== null) {
-            $("#enviar").addClass("bg-red-600 hover:bg-red-700 transition-all duration-200 transform hover:scale-105 cursor-pointer");
-            $("#enviar").removeClass("bg-gray-400");
-            $("#enviar").removeAttr("disabled");
-        }
-    });
-</script>
+            if (classe !== null && raca !== null && antecedente !== null) {
+                $("#enviar").addClass(
+                    "bg-red-600 hover:bg-red-700 transition-all duration-200 transform hover:scale-105 cursor-pointer"
+                );
+                $("#enviar").removeClass("bg-gray-400");
+                $("#enviar").removeAttr("disabled");
+            }
+        });
+    </script>
 </body>
 
 </html>
